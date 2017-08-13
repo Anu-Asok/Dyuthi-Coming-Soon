@@ -4,7 +4,7 @@ function setup() {
   var x=window.innerWidth;
   var y=window.innerHeight
   if (x<1000){
-    var myCanvas=createCanvas(x-15,y+1);
+    var myCanvas=createCanvas(x,y+1);
     mSize = width/8;
   }
   else{
