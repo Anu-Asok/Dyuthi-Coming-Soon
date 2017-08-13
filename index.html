@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Dyuthi</title>
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="vendor/simple-line-icons/css/simple-line-icons.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+    <link rel="shortcut icon" href="dyuthi-icon.gif">
+    <link href="css/new-age.min.css" rel="stylesheet">
+    <link href="css/full-slider.css" rel="stylesheet">
+    <script src="libraries/p5.js" type="text/javascript"></script>
+
+    <script src="libraries/p5.dom.js" type="text/javascript"></script>
+    <script src="libraries/p5.sound.js" type="text/javascript"></script>
+
+    <script src="sketch.js" type="text/javascript"></script>
+    <style media="screen">
+      #can{
+        line-height: 0.5;
+      }
+      #loader {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      z-index: 1;
+      width: 150px;
+      height: 150px;
+      margin: -75px 0 0 -75px;
+      border: 16px solid #f3f3f3;
+      border-radius: 50%;
+      border-top: 16px solid #3498db;
+      width: 120px;
+      height: 120px;
+      -webkit-animation: spin 2s linear infinite;
+      animation: spin 2s linear infinite;
+    }
+
+    @-webkit-keyframes spin {
+      0% { -webkit-transform: rotate(0deg); }
+      100% { -webkit-transform: rotate(360deg); }
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* Add animation to "page content" */
+    .animate-bottom {
+      position: relative;
+      -webkit-animation-name: animatebottom;
+      -webkit-animation-duration: 1s;
+      animation-name: animatebottom;
+      animation-duration: 1s
+    }
+
+    @-webkit-keyframes animatebottom {
+      from { bottom:-100px; opacity:0 }
+      to { bottom:0px; opacity:1 }
+    }
+
+    @keyframes animatebottom {
+      from{ bottom:-100px; opacity:0 }
+      to{ bottom:0; opacity:1 }
+    }
+
+    </style>
+  </head>
+  <body>
+    <div id="loader">
+
+    </div>
+    <div id="page-top" class="animate-bottom" style="display:none;">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+      <a class="navbar-brand" href="#page-top">Dyuthi 17</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fa fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#download">About Dyuthi</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#photos">Photos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Follow us</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div id="can">
+
+    </div>
+
+    <section class="download bg-primary text-center" id="download">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 mx-auto">
+            <h2 class="section-heading">Dyuthi 2k17</h2>
+            <h4>The days of flabbergasting fiesta is coming back this year, with more on the anvil, more to the show and yet more to its pomp! The unchallenged pride of GEC, its annual technical multifest, the DYUTHI'17, awaits to be unfurled and we invite you to the land of the grandiose!</h4>
+          </div>
+        </div>
+      </div>
+    </section>
+<div id="photos">
+
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+              <ol class="carousel-indicators">
+                  <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                  <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                  <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+              </ol>
+              <div class="carousel-inner" role="listbox">
+                  <!-- Slide One - Set the background image for this slide in the line below -->
+                  <div class="carousel-item active" style="background-image: url('./dyuthi1.jpg')">
+
+                  </div>
+                  <!-- Slide Two - Set the background image for this slide in the line below -->
+                  <div class="carousel-item" style="background-image: url('./dyuthi2.jpg')">
+                  </div>
+                  <!-- Slide Three - Set the background image for this slide in the line below -->
+                  <div class="carousel-item" style="background-image: url('./dyuthi3.jpg')">
+
+                  </div>
+              </div>
+
+          </div>
+
+        </div>
+
+    <section class="contact bg-primary" id="contact">
+      <div class="container">
+        <h2>Follow us on</h2>
+        <ul class="list-inline list-social">
+          <li class="list-inline-item social-facebook">
+            <a href="https://www.facebook.com/dyuthigec/">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li class="list-inline-item social-google-plus">
+            <a href="https://www.youtube.com/user/DyuthiOfficial">
+              <i class="fa fa-youtube"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <p>Dyuthi 2k17 | Coming Soon</p>
+      </div>
+    </footer>
+    </div>
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/popper/popper.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/new-age.min.js"></script>
+
+  </body>
+
+</html>
