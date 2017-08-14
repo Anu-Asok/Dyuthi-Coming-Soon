@@ -31,7 +31,7 @@ function draw() {
   image(bg,0,0,width,height);
 
   var wind = mouseX - width/2;
-  wind/=50000;
+  wind/=50000 ;
   if(wind>0.01)
     wind = 0.01;
   if(wind<-0.01)
@@ -88,10 +88,10 @@ function Lantern()
   {
     this.pos.add(this.vel);
     this.vel.add(this.acc);
-    if(this.vel.x>2)
-      this.vel.x = 2;
-    if(this.vel.x<-2)
-      this.vel.x = -2;
+    if(this.vel.x>4)
+      this.vel.x = 4;
+    if(this.vel.x<-4)
+      this.vel.x = -4;
     this.acc.mult(0);
     this.vel.x*=0.9;
   }
