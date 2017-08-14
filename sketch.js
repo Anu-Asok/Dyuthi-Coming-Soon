@@ -1,4 +1,4 @@
-var n = 80, lantern = [], mSize = 100, bg, crowd, timer = 0, people, dyuthi, logo;
+var n = 80, lantern = [], mSize = 100, bg, crowd, timer = 0, people, dyuthi, logo,  t = 0, wind;
 
 function setup() {
   var x=window.innerWidth;
@@ -29,21 +29,27 @@ function setup() {
 
 function draw() {
   image(bg,0,0,width,height);
-
-  var wind = mouseX - width/2;
-  wind/=50000 ;
-  if(wind>0.01)
-    wind = 0.01;
-  if(wind<-0.01)
-    wind = -0.01;
+  var thewind = createVector(wind,0);
+  var randWind = createVector(map(noise(t),0,1,-width/8000,width/8000),0);
 
   for(var i=0;i<n;i++)
   {
     lantern[i].display();
     lantern[i].upperbound();
     lantern[i].update();
-    lantern[i].acc.set(wind*lantern[i].w,0);
   }
+
+  for(var i = 0;i<n;i++)
+   {
+     if(i%3 == 0)
+       lantern[i].applyForce(createVector(randWind.x,0));
+     else
+       lantern[i].applyForce(createVector(-randWind.x,0));
+
+     wind = (mouseX - width/2)/1000;
+     lantern[i].applyForce(thewind);
+   }
+
   var x=window.innerWidth;
   if (x<1000){
     var ratio=x/1000+0.2;
@@ -54,7 +60,7 @@ function draw() {
     image(logo, 0 ,13,logo.width,logo.height);
     image(people, 0,height - people.height,people.width,people.height);
   }
-  noStroke();
+  t+=0.01;
   setTimeout(function(){
     document.getElementById("loader").style.display = "none";
     document.getElementById("page-top").style.display = "block";
@@ -94,5 +100,9 @@ function Lantern()
       this.vel.x = -4;
     this.acc.mult(0);
     this.vel.x*=0.9;
+  }
+  this.applyForce = function(x)
+  {
+    this.acc.add(x);
   }
 }
