@@ -23,14 +23,13 @@ function setup() {
   bg = loadImage("data/bg.png");
   people = loadImage("data/people.png");
   dyuthi = loadImage("data/dyuthi.png");
-  logo = loadImage("data/logo.png")
-  frameRate(30);
+  logo = loadImage("data/logo.png");
 }
 
 function draw() {
   image(bg,0,0,width,height);
   var thewind = createVector(wind,0);
-  var randWind = createVector(map(noise(t),0,1,-width/8000,width/8000),0);
+  var randWind = createVector(map(noise(t),0,1,-height/8000,height/8000),0);
 
   for(var i=0;i<n;i++)
   {
@@ -94,10 +93,10 @@ function Lantern()
   {
     this.pos.add(this.vel);
     this.vel.add(this.acc);
-    if(this.vel.x>4)
-      this.vel.x = 4;
-    if(this.vel.x<-4)
-      this.vel.x = -4;
+    if(this.vel.x>3)
+      this.vel.x = 3;
+    if(this.vel.x<-3)
+      this.vel.x = -3;
     this.acc.mult(0);
     this.vel.x*=0.9;
   }
