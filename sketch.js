@@ -1,13 +1,10 @@
 var n = 80, lantern = [], mSize = 100, bg, crowd, timer = 0, people, dyuthi, logo,  t = 0, wind;
 function setup() {
   var x=window.innerWidth;
-  var y=window.innerHeight;
+  var y=window.innerHeight
   if (x<1000){
-    var myCanvas=createCanvas(x,y+2);
-    if(x<600)
-      mSize = width/8;
-    else
-      mSize = width/12;
+    var myCanvas=createCanvas(x,y+1);
+    mSize = width/8;
   }
   else{
     var myCanvas=createCanvas(x-15,y);
@@ -29,19 +26,7 @@ function setup() {
 }
 
 function draw() {
-  var x=window.innerWidth;
-  var y=window.innerHeight;
-  $('canvas').attr('width',x);
-  $('canvas').attr('height',y+2);
-  $('canvas').css({
-    'width':x,
-    'height':y+2
-  });
   image(bg,0,0,width,height);
-  for(var i =0 ;i<n;i++){
-    lantern[i].w = (i+1)*mSize/n;
-  }
-
   var thewind = createVector(wind,0);
   var randWind = createVector(map(noise(t),0,1,-height/8000,height/8000),0);
 
@@ -62,10 +47,10 @@ function draw() {
      wind = (mouseX - width/2)/1000;
      lantern[i].applyForce(thewind);
    }
+
+  var x=window.innerWidth;
   if (x<1000){
-    var ratio=x/1000;
-    if (x<600)
-      ratio+=0.2;
+    var ratio=x/1000+0.2;
     image(dyuthi, width/2 - dyuthi.width*ratio/2 ,height/2 - dyuthi.height*ratio/2,dyuthi.width*ratio,dyuthi.height*ratio);
     image(logo, 10 ,55,logo.width*ratio,logo.height*ratio);
   }else{
