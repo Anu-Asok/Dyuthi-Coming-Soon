@@ -1,107 +1,208 @@
 #can{
   line-height: 0.5;
 }
-
-.cssload-container{
-  position:relative;
-  top:50%
+.cssload-box-loading {
+	width: 88px;
+	height: 88px;
+	margin: auto;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
 }
-
-.cssload-whirlpool,
-.cssload-whirlpool::before,
-.cssload-whirlpool::after {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  border: 1px solid rgb(204,204,204);
-  border-left-color: rgb(0,0,0);
-  border-radius: 974px;
-    -o-border-radius: 974px;
-    -ms-border-radius: 974px;
-    -webkit-border-radius: 974px;
-    -moz-border-radius: 974px;
+.cssload-box-loading:before {
+	content: '';
+	width: 88px;
+	height: 9px;
+	background: rgb(0,0,0);
+	opacity: 0.1;
+	position: absolute;
+	top: 103px;
+	left: 0;
+	border-radius: 50%;
+	animation: shadow 0.58s linear infinite;
+		-o-animation: shadow 0.58s linear infinite;
+		-ms-animation: shadow 0.58s linear infinite;
+		-webkit-animation: shadow 0.58s linear infinite;
+		-moz-animation: shadow 0.58s linear infinite;
 }
-
-.cssload-whirlpool {
-  margin: -24px 0 0 -24px;
-  height: 49px;
-  width: 49px;
-  animation: cssload-rotate 1150ms linear infinite;
-    -o-animation: cssload-rotate 1150ms linear infinite;
-    -ms-animation: cssload-rotate 1150ms linear infinite;
-    -webkit-animation: cssload-rotate 1150ms linear infinite;
-    -moz-animation: cssload-rotate 1150ms linear infinite;
-}
-
-.cssload-whirlpool::before {
-  content: "";
-  margin: -22px 0 0 -22px;
-  height: 43px;
-  width: 43px;
-  animation: cssload-rotate 1150ms linear infinite;
-    -o-animation: cssload-rotate 1150ms linear infinite;
-    -ms-animation: cssload-rotate 1150ms linear infinite;
-    -webkit-animation: cssload-rotate 1150ms linear infinite;
-    -moz-animation: cssload-rotate 1150ms linear infinite;
-}
-
-.cssload-whirlpool::after {
-  content: "";
-  margin: -28px 0 0 -28px;
-  height: 55px;
-  width: 55px;
-  animation: cssload-rotate 2300ms linear infinite;
-    -o-animation: cssload-rotate 2300ms linear infinite;
-    -ms-animation: cssload-rotate 2300ms linear infinite;
-    -webkit-animation: cssload-rotate 2300ms linear infinite;
-    -moz-animation: cssload-rotate 2300ms linear infinite;
+.cssload-box-loading:after {
+	content: '';
+	width: 88px;
+	height: 88px;
+	background: rgb(26,54,104);
+	position: absolute;
+	top: 0;
+	left: 0;
+	border-radius: 5px;
+	animation: cssload-animate 0.58s linear infinite;
+		-o-animation: cssload-animate 0.58s linear infinite;
+		-ms-animation: cssload-animate 0.58s linear infinite;
+		-webkit-animation: cssload-animate 0.58s linear infinite;
+		-moz-animation: cssload-animate 0.58s linear infinite;
 }
 
 
 
-@keyframes cssload-rotate {
-  100% {
-    transform: rotate(360deg);
-  }
+@keyframes cssload-animate {
+	17% {
+		border-bottom-right-radius: 5px;
+	}
+	25% {
+		transform: translateY(16px) rotate(22.5deg);
+	}
+	50% {
+		transform: translateY(32px) scale(1, 0.9) rotate(45deg);
+		border-bottom-right-radius: 70px;
+	}
+	75% {
+		transform: translateY(16px) rotate(67.5deg);
+	}
+	100% {
+		transform: translateY(0) rotate(90deg);
+	}
 }
 
-@-o-keyframes cssload-rotate {
-  100% {
-    -o-transform: rotate(360deg);
-  }
+@-o-keyframes cssload-animate {
+	17% {
+		border-bottom-right-radius: 5px;
+	}
+	25% {
+		-o-transform: translateY(16px) rotate(22.5deg);
+	}
+	50% {
+		-o-transform: translateY(32px) scale(1, 0.9) rotate(45deg);
+		border-bottom-right-radius: 70px;
+	}
+	75% {
+		-o-transform: translateY(16px) rotate(67.5deg);
+	}
+	100% {
+		-o-transform: translateY(0) rotate(90deg);
+	}
 }
 
-@-ms-keyframes cssload-rotate {
-  100% {
-    -ms-transform: rotate(360deg);
-  }
+@-ms-keyframes cssload-animate {
+	17% {
+		border-bottom-right-radius: 5px;
+	}
+	25% {
+		-ms-transform: translateY(16px) rotate(22.5deg);
+	}
+	50% {
+		-ms-transform: translateY(32px) scale(1, 0.9) rotate(45deg);
+		border-bottom-right-radius: 70px;
+	}
+	75% {
+		-ms-transform: translateY(16px) rotate(67.5deg);
+	}
+	100% {
+		-ms-transform: translateY(0) rotate(90deg);
+	}
 }
 
-@-webkit-keyframes cssload-rotate {
-  100% {
-    -webkit-transform: rotate(360deg);
-  }
+@-webkit-keyframes cssload-animate {
+	17% {
+		border-bottom-right-radius: 5px;
+	}
+	25% {
+		-webkit-transform: translateY(16px) rotate(22.5deg);
+	}
+	50% {
+		-webkit-transform: translateY(32px) scale(1, 0.9) rotate(45deg);
+		border-bottom-right-radius: 70px;
+	}
+	75% {
+		-webkit-transform: translateY(16px) rotate(67.5deg);
+	}
+	100% {
+		-webkit-transform: translateY(0) rotate(90deg);
+	}
 }
 
-@-moz-keyframes cssload-rotate {
-  100% {
-    -moz-transform: rotate(360deg);
-  }
+@-moz-keyframes cssload-animate {
+	17% {
+		border-bottom-right-radius: 5px;
+	}
+	25% {
+		-moz-transform: translateY(16px) rotate(22.5deg);
+	}
+	50% {
+		-moz-transform: translateY(32px) scale(1, 0.9) rotate(45deg);
+		border-bottom-right-radius: 70px;
+	}
+	75% {
+		-moz-transform: translateY(16px) rotate(67.5deg);
+	}
+	100% {
+		-moz-transform: translateY(0) rotate(90deg);
+	}
+}
+
+@keyframes shadow {
+	0%,
+	100% {
+		transform: scale(1, 1);
+	}
+	50% {
+		transform: scale(1.2, 1);
+	}
+}
+
+@-o-keyframes shadow {
+	0%,
+	100% {
+		-o-transform: scale(1, 1);
+	}
+	50% {
+		-o-transform: scale(1.2, 1);
+	}
+}
+
+@-ms-keyframes shadow {
+	0%,
+	100% {
+		-ms-transform: scale(1, 1);
+	}
+	50% {
+		-ms-transform: scale(1.2, 1);
+	}
+}
+
+@-webkit-keyframes shadow {
+	0%,
+	100% {
+		-webkit-transform: scale(1, 1);
+	}
+	50% {
+		-webkit-transform: scale(1.2, 1);
+	}
+}
+
+@-moz-keyframes shadow {
+	0%,
+	100% {
+		-moz-transform: scale(1, 1);
+	}
+	50% {
+		-moz-transform: scale(1.2, 1);
+	}
 }
 .animate-bottom {
 position: relative;
 -webkit-animation-name: animatebottom;
--webkit-animation-duration: 1s;
+-webkit-animation-duration: 1.4s;
 animation-name: animatebottom;
-animation-duration: 1s
+animation-duration: 1.4s
 }
 
 @-webkit-keyframes animatebottom {
-from { bottom:-100px; opacity:0 }
+from { bottom:-80vh; opacity:0 }
 to { bottom:0px; opacity:1 }
 }
 
 @keyframes animatebottom {
-from{ bottom:-100px; opacity:0 }
+from{ bottom:-80vh; opacity:0 }
 to{ bottom:0; opacity:1 }
 }

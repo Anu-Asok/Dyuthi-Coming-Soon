@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Dyuthi</title>
+    <title>Dyuthi 17 | Coming Soon</title>
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="vendor/simple-line-icons/css/simple-line-icons.css">
@@ -12,17 +12,14 @@
     <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
     <link rel="shortcut icon" href="dyuthi-icon.gif">
     <link href="css/new-age.min.css" rel="stylesheet">
-    <link href="css/full-slider.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
     <script src="libraries/p5.js" type="text/javascript"></script>
     <script src="sketch.js" type="text/javascript"></script>
     <link rel="stylesheet" href="css/loader.css">
   </head>
   <body>
-    <div class="cssload-container" id="loader">
-	   <div class="cssload-whirlpool"></div>
-    </div>
+    <div class="cssload-box-loading" id="loader"></div>
     <div id="page-top" class="animate-bottom" style="display:none;">
-    <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
       <a class="navbar-brand" href="#page-top">Dyuthi 17</a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -32,23 +29,22 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link" href="#download">About Dyuthi</a>
+            <a class="nav-link" href="#about">About Dyuthi</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#photos">Photos</a>
+            <a class="nav-link" href="#portfolio">Photos</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#contact">Follow us</a>
+            <a class="nav-link" href="#events">Events</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#follow-us">Follow us</a>
           </li>
         </ul>
       </div>
     </nav>
-
-    <div id="can">
-
-    </div>
-
-    <section class="download bg-primary text-center" id="download">
+    <div id="can"></div>
+    <section class="download text-center" id="about">
       <div class="container">
         <div class="row">
           <div class="col-md-12 mx-auto">
@@ -58,33 +54,148 @@
         </div>
       </div>
     </section>
-<div id="photos">
-
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-              <ol class="carousel-indicators">
-                  <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                  <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                  <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-              </ol>
-              <div class="carousel-inner" role="listbox">
-                  <!-- Slide One - Set the background image for this slide in the line below -->
-                  <div class="carousel-item active" style="background-image: url('./dyuthi1.jpg')">
-
-                  </div>
-                  <!-- Slide Two - Set the background image for this slide in the line below -->
-                  <div class="carousel-item" style="background-image: url('./dyuthi2.jpg')">
-                  </div>
-                  <!-- Slide Three - Set the background image for this slide in the line below -->
-                  <div class="carousel-item" style="background-image: url('./dyuthi3.jpg')">
-
-                  </div>
-              </div>
-
+    <section class="bg-light" id="portfolio">
+      <div class="container text-center">
+        <div class="row">
+          <div class="col-md-12 mx-auto">
+            <h2 class="section-heading">Dyuthi 16 Memories</h2>
+            <embed id="audio" src="d.mp3" width="0" height="0" autostart="true" loop="true">
+            </embed>
           </div>
-
         </div>
+        <br>
+        <div class="row">
+          <div class="col-md-4 col-sm-6 portfolio-item">
+            <div class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
+              <div class="portfolio-hover">
+                <div class="portfolio-hover-content">
+                  <i class="fa fa-plus fa-2x"></i>
+                </div>
+              </div>
+              <img class="img-fluid" src="img/portfolio/1.jpg">
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 portfolio-item">
+            <div class="portfolio-link" data-toggle="modal" href="#portfolioModal2">
+              <div class="portfolio-hover">
+                <div class="portfolio-hover-content">
+                  <i class="fa fa-plus fa-2x"></i>
+                </div>
+              </div>
+              <img class="img-fluid" src="img/portfolio/2.jpg">
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 portfolio-item">
+            <div class="portfolio-link" data-toggle="modal" href="#portfolioModal3">
+              <div class="portfolio-hover">
+                <div class="portfolio-hover-content">
+                  <i class="fa fa-plus fa-2x"></i>
+                </div>
+              </div>
+              <img class="img-fluid" src="img/portfolio/3.jpg">
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 portfolio-item">
+            <div class="portfolio-link" data-toggle="modal" href="#portfolioModal4">
+              <div class="portfolio-hover">
+                <div class="portfolio-hover-content">
+                  <i class="fa fa-plus fa-2x"></i>
+                </div>
+              </div>
+              <img class="img-fluid" src="img/portfolio/4.jpg">
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 portfolio-item">
+            <div class="portfolio-link" data-toggle="modal" href="#portfolioModal5">
+              <div class="portfolio-hover">
+                <div class="portfolio-hover-content">
+                  <i class="fa fa-plus fa-2x"></i>
+                </div>
+              </div>
+              <img class="img-fluid" src="img/portfolio/5.jpg">
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 portfolio-item">
+            <div class="portfolio-link" data-toggle="modal" href="#portfolioModal6">
+              <div class="portfolio-hover">
+                <div class="portfolio-hover-content">
+                  <i class="fa fa-plus fa-2x"></i>
+                </div>
+              </div>
+              <img class="img-fluid" src="img/portfolio/6.jpg">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="events">
+       <div class="container">
+         <div class="row">
+           <div class="col-lg-12 text-center">
+             <h3 class="section-subheading text-muted">Events of Dyuthi 16</h3>
+             <br>
+           </div>
+         </div>
+         <div class="row">
+           <div class="col-lg-12">
+             <ul class="timeline">
+               <li>
+                 <div class="timeline-image">
+                   <img class="rounded-circle img-fluid" src="img/about/1.jpg" alt="">
+                 </div>
+                 <div class="timeline-panel">
+                   <div class="timeline-heading">
+                     <h4>Mitad Codigo</h4>
+                     <h4 class="subheading"></h4>
+                   </div>
+                   <div class="timeline-body">
+                     <p class="text-muted">Think two coders is better than one?... then think again……..Introducing Mitad Código which takes teamwork and coordination to a whole new level.</p>
+                   </div>
+                 </div>
+               </li>
+               <li class="timeline-inverted">
+                 <div class="timeline-image">
+                   <img class="rounded-circle img-fluid" src="img/about/2.jpg" alt="">
+                 </div>
+                 <div class="timeline-panel">
+                   <div class="timeline-heading">
+                     <h4>Zero Gravity</h4>
+                     <h4 class="subheading"></h4>
+                   </div>
+                   <div class="timeline-body">
+                     <p class="text-muted">To dance is to breathe! Wanna dance like nobodys watching you? And make your own steps while at it? This one is for you! Zero Gravity is an individual freestyle dancing competition which will be conducted on an open stage.</p>
+                   </div>
+                 </div>
+               </li>
+               <li>
+                 <div class="timeline-image">
+                   <img class="rounded-circle img-fluid" src="img/about/3.jpg" alt="">
+                 </div>
+                 <div class="timeline-panel">
+                   <div class="timeline-heading">
+                     <h4>Quizzards of OZ</h4>
+                     <h4 class="subheading"></h4>
+                   </div>
+                   <div class="timeline-body">
+                     <p class="text-muted">Where every instant is a matter of victory and defeat,
+Where even the trivial trivia are a cause to succeed,
+Where Minds are to be sharp and memories quick,
+It is there Gyanartha takes you this Dyuthi 16</p>
+                   </div>
+                 </div>
+               </li>
 
-    <section class="contact bg-primary" id="contact">
+             </ul>
+             <div class="container text-center">
+               <h4 class="subheading text-muted">
+                 And many more...
+               </h4>
+             </div>
+           </div>
+         </div>
+       </div>
+     </section>
+    <section class="contact bg-light" id="follow-us">
       <div class="container">
         <h2>Follow us on</h2>
         <ul class="list-inline list-social">
@@ -104,9 +215,130 @@
 
     <footer>
       <div class="container">
-        <p>Dyuthi 2k17 | Coming Soon</p>
+        <p>© Copyright 2017 Dyuthi - All Rights Reserved</p>
       </div>
     </footer>
+    </div>
+    <!-- Portfolio Modals -->
+     <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="close-modal" data-dismiss="modal">
+            <div class="lr">
+              <div class="rl"></div>
+            </div>
+          </div>
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-8 mx-auto">
+                <div class="modal-body">
+                  <img class="img-fluid d-block mx-auto" src="img/portfolio/1.jpg" alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+     <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="close-modal" data-dismiss="modal">
+            <div class="lr">
+              <div class="rl"></div>
+            </div>
+          </div>
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-8 mx-auto">
+                <div class="modal-body">
+                  <img class="img-fluid d-block mx-auto" src="img/portfolio/2.jpg" alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="close-modal" data-dismiss="modal">
+            <div class="lr">
+              <div class="rl"></div>
+            </div>
+          </div>
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-8 mx-auto">
+                <div class="modal-body">
+                  <img class="img-fluid d-block mx-auto" src="img/portfolio/3.jpg" alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="close-modal" data-dismiss="modal">
+            <div class="lr">
+              <div class="rl"></div>
+            </div>
+          </div>
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-8 mx-auto">
+                <div class="modal-body">
+                  <img class="img-fluid d-block mx-auto" src="img/portfolio/4.jpg" alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="close-modal" data-dismiss="modal">
+            <div class="lr">
+              <div class="rl"></div>
+            </div>
+          </div>
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-8 mx-auto">
+                <div class="modal-body">
+                  <img class="img-fluid d-block mx-auto" src="img/portfolio/5.jpg" alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="close-modal" data-dismiss="modal">
+            <div class="lr">
+              <div class="rl"></div>
+            </div>
+          </div>
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-8 mx-auto">
+                <div class="modal-body">
+                  <img class="img-fluid d-block mx-auto" src="img/portfolio/6.jpg" alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>

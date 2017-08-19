@@ -1,14 +1,14 @@
-var n = 80, lantern = [], mSize = 100, bg, crowd, timer = 0, people, dyuthi, logo,  t = 0, wind;
+var n = 80, lantern = [], mSize = 100, bg, crowd, timer = 0, dyuthi, logo,  t = 0, wind;
 function setup() {
   var x=window.innerWidth;
   var y=window.innerHeight
-  if (x<1000){
+  if (x<800){
     var myCanvas=createCanvas(x,y+1);
     mSize = width/8;
   }
   else{
     var myCanvas=createCanvas(x-15,y);
-    mSize = width/16;
+    mSize = width/17;
   }
   myCanvas.parent('can');
   for(var i=0;i<n;i++)
@@ -20,7 +20,6 @@ function setup() {
     lantern[i].vel.y = -lantern[i].w/100;
   }
   bg = loadImage("data/bg.png");
-  people = loadImage("data/people.png");
   dyuthi = loadImage("data/dyuthi.png");
   logo = loadImage("data/logo.png");
 }
@@ -50,13 +49,14 @@ function draw() {
 
   var x=window.innerWidth;
   if (x<1000){
-    var ratio=x/1000+0.2;
+    var ratio=x/1000;
+    if (x<800)
+      ratio+=0.2;
     image(dyuthi, width/2 - dyuthi.width*ratio/2 ,height/2 - dyuthi.height*ratio/2,dyuthi.width*ratio,dyuthi.height*ratio);
     image(logo, 10 ,55,logo.width*ratio,logo.height*ratio);
   }else{
     image(dyuthi, width/2 - dyuthi.width/2 ,height/2 - dyuthi.height/2,dyuthi.width,dyuthi.height);
-    image(logo, 0 ,13,logo.width,logo.height);
-    image(people, 0,height - people.height,people.width,people.height);
+    image(logo, 0 ,23,logo.width,logo.height);
   }
   t+=0.01;
   setTimeout(function(){
