@@ -206,3 +206,9 @@ to { bottom:0px; opacity:1 }
 from{ bottom:-80vh; opacity:0 }
 to{ bottom:0; opacity:1 }
 }
+
+@media screen and (max-width: 1010px) {
+    #mainNav {
+        display:none;
+    }
+}
