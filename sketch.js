@@ -65,7 +65,7 @@ function draw() {
   setTimeout(function(){
     document.getElementById("loader").style.display = "none";
     document.getElementById("page-top").style.display = "block";
-  },500);
+  },3000);
 }
 
 function Lantern()
