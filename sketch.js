@@ -28,39 +28,7 @@ function setup() {
 }
 
 function draw() {
-  image(bg,0,0,width,height);
-  var thewind = createVector(wind,0);
-  var randWind = createVector(map(noise(t),0,1,-height/8000,height/8000),0);
-  var x=window.innerWidth;
-  for(var i=0;i<n;i++)
-  {
-    lantern[i].display();
-    lantern[i].upperbound();
-    lantern[i].update();
-  }
-
-  for(var i = 0;i<n;i++)
-   {
-     if(i%3 == 0)
-       lantern[i].applyForce(createVector(randWind.x,0));
-     else
-       lantern[i].applyForce(createVector(-randWind.x,0));
-
-     wind = (mouseX - width/2)/1000;
-     lantern[i].applyForce(thewind);
-   }
-  var x=window.innerWidth;
-  if (x<=1010){
-    var ratio=x/1000;
-    if (x<400)
-      ratio+=0.25;
-    image(dyuthi, width/2 - dyuthi.width*ratio/2 ,height/2 - dyuthi.height*ratio/2 ,dyuthi.width*ratio,dyuthi.height*ratio);
-    image(logo, 10 ,10,logo.width*ratio,logo.height*ratio);
-  }else{
-    image(dyuthi, width/2 - dyuthi.width/2 ,height/2 - dyuthi.height/2 ,dyuthi.width,dyuthi.height);
-    image(logo, 0 ,23,logo.width,logo.height);
-  }
-  t+=0.01;
+ 
 
   setTimeout(function(){
     document.getElementById("loader").style.display = "none";
