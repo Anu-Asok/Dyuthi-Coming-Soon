@@ -1,0 +1,594 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Countdown Clock Demo</title>
+
+<link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+<style>
+  
+html,
+body { background-color: #000; }
+
+.clock {
+  font-size: 0;
+  text-align: center;
+}
+
+.clock .digit {
+  display: inline-block;
+  width: 60px;  
+  margin: 10px;
+  /*-webkit-transform: skewX(-2deg);
+  transform: skewX(-2deg);*/
+}
+
+.clock .digit#digit-2 .cell {
+  -webkit-transition: opacity 50ms ease;
+  transition: opacity 50ms ease;
+}
+
+.clock .digit#digit-3 .cell,
+.clock .digit#digit-4 .cell,
+.clock .digit#digit-5 .cell,
+.clock .digit#digit-6 .cell,
+.clock .digit#digit-7 .cell,
+.clock .digit#digit-8 .cell,
+.clock .digit#digit-9 .cell,
+.clock .digit#digit-10 .cell,
+.clock .digit#digit-11 .cell {
+  -webkit-transition: opacity 100ms ease;
+  transition: opacity 100ms ease;
+}
+
+.clock .digit .cell {
+  width: 11px;
+  height: 11px;
+  margin: 2px;
+  background-color: white;
+  border-radius: 2px;
+  display: inline-block;
+  opacity: 0.1;
+}
+
+.clock .digit .cell.on { opacity: 1; }
+</style>
+</head>
+
+<body>
+
+<section class="clock">
+   <!--
+   <div id="digit-10" class="digit">
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+  </div>
+  <div id="digit-9" class="digit">
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+  </div>
+ -->
+  <div id="digit-8" class="digit">
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+  </div>
+  <div id="digit-7" class="digit">
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+  </div>
+
+  <div style="width:3vw;display: inline-block;"></div>
+  <div id="digit-6" class="digit">
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+  </div>
+
+  <div id="digit-5" class="digit">
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+  </div>
+  <div style="width:3vw;display: inline-block;"></div>
+  <div id="digit-4" class="digit">
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+  </div>
+  <div id="digit-3" class="digit">
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+  </div>
+
+  <div style="width:3vw;display: inline-block;"></div>
+  <div id="digit-2" class="digit">
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+  </div>
+  <div id="digit-1" class="digit">
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+  </div>
+  <div id="digit-0" class="digit">
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+  </div>
+</section>
+<script>
+var grad = new Date("Sep 19, 2017 23:59:00"),
+  digit0 = $('#digit-0');
+  digit1 = $('#digit-1'),
+  digit2 = $('#digit-2'),
+  digit3 = $('#digit-3'),
+  digit4 = $('#digit-4'),
+  digit5 = $('#digit-5'),
+  digit6 = $('#digit-6'),
+  digit7 = $('#digit-7'),
+  digit8 = $('#digit-8'),
+  digit9 = $('#digit-9'),
+  digit10 = $('#digit-10');
+
+function renderDigit(container, number) {
+  var matrix = [];
+  switch(number) {
+    case 0:
+      matrix = [
+        true, true, true, true,
+        true, false, false, true,
+        true, false, false, true,
+        true, false, false, true,
+        true, false, false, true,
+        true, false, false, true,
+        true, true, true, true
+      ];
+      break;
+    case 1:
+      matrix = [
+        false, false, false, true,
+        false, false, false, true,
+        false, false, false, true,
+        false, false, false, true,
+        false, false, false, true,
+        false, false, false, true,
+        false, false, false, true
+      ];
+      break;
+    case 2:
+      matrix = [
+        true, true, true, true,
+        false, false, false, true,
+        false, false, false, true,
+        true, true, true, true,
+        true, false, false, false,
+        true, false, false, false,
+        true, true, true, true
+      ];
+      break;
+    case 3:
+      matrix = [
+        true, true, true, true,
+        false, false, false, true,
+        false, false, false, true,
+        false, true, true, true,
+        false, false, false, true,
+        false, false, false, true,
+        true, true, true, true
+      ];
+      break;
+    case 4:
+      matrix = [
+        true, false, false, false,
+        true, false, false, true,
+        true, false, false, true,
+        true, true, true, true,
+        false, false, false, true,
+        false, false, false, true,
+        false, false, false, true
+      ];
+      break;
+    case 5:
+      matrix = [
+        true, true, true, true,
+        true, false, false, false,
+        true, false, false, false,
+        true, true, true, true,
+        false, false, false, true,
+        false, false, false, true,
+        true, true, true, true
+      ];
+      break;
+    case 6:
+      matrix = [
+        true, true, true, true,
+        true, false, false, false,
+        true, false, false, false,
+        true, true, true, true,
+        true, false, false, true,
+        true, false, false, true,
+        true, true, true, true
+      ];
+      break;
+    case 7:
+      matrix = [
+        true, true, true, true,
+        true, false, false, true,
+        false, false, false, true,
+        false, false, false, true,
+        false, false, false, true,
+        false, false, false, true,
+        false, false, false, true
+      ];
+      break;
+    case 8:
+      matrix = [
+        true, true, true, true,
+        true, false, false, true,
+        true, false, false, true,
+        true, true, true, true,
+        true, false, false, true,
+        true, false, false, true,
+        true, true, true, true
+      ];
+      break;
+    case 9:
+      matrix = [
+        true, true, true, true,
+        true, false, false, true,
+        true, false, false, true,
+        true, true, true, true,
+        false, false, false, true,
+        false, false, false, true,
+        false, false, false, true
+      ];
+      break;
+  }
+  var children = container.children();
+  var len = matrix.length;
+  for (var i = 0; i < len; i++) {
+    children.eq(i).toggleClass('on', matrix[i]);
+  }
+}
+
+function render() {
+  var now = new Date(),
+    diff = String(grad.getTime() - now.getTime()),
+    len = diff.length;
+
+    var distance = grad.getTime() -now.getTime();
+
+    
+    var milliseconds = distance;
+    // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(milliseconds / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((milliseconds / (1000 * 60 * 60)) % 24);
+  var minutes = Math.floor((milliseconds / (1000 * 60)) % 60);
+  var seconds = Math.floor (milliseconds / 1000) % 60;
+  // var milliseconds = distance -seconds*1000;
+
+    // Time calculations for days, hours, minutes and seconds
+  // var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  // var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  // var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  // var seconds = Math.floor(((distance / 1000) % 60));
+  // var milliseconds = distance -seconds*1000;
+
+/*
+  renderDigit(digit0, Number(diff.charAt(len-1)));
+  renderDigit(digit1, Number(diff.charAt(len-2)));
+  renderDigit(digit2, Number(diff.charAt(len-3)));
+  renderDigit(digit3, Number(diff.charAt(len-4)));
+  renderDigit(digit4, Number(diff.charAt(len-5)));
+  renderDigit(digit5, Number(diff.charAt(len-6)));
+  renderDigit(digit6, Number(diff.charAt(len-7)));
+  renderDigit(digit7, Number(diff.charAt(len-8)));
+  renderDigit(digit8, Number(diff.charAt(len-9)));
+  renderDigit(digit9, Number(diff.charAt(len-10)));
+  renderDigit(digit10, Number(diff.charAt(len-11)));
+  */
+
+// alert(milliseconds);
+
+  renderDigit(digit10, parseInt(days/10));
+  renderDigit(digit9, days%10);
+  renderDigit(digit8, parseInt(hours/10));
+  renderDigit(digit7, hours%10);
+  renderDigit(digit6, parseInt(minutes/10));
+  renderDigit(digit5, minutes%10);
+  renderDigit(digit4, parseInt(seconds/10));
+  renderDigit(digit3, seconds%10);
+  renderDigit(digit2, parseInt(milliseconds/100)%10);
+  renderDigit(digit1, (milliseconds/10)%10);
+  renderDigit(digit0, milliseconds%10);
+
+  requestAnimationFrame(render);
+}
+
+requestAnimationFrame(render);
+</script>
+</body>
+</html>

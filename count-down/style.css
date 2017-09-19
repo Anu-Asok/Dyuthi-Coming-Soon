@@ -1,0 +1,46 @@
+
+html,
+body { background-color: #000; }
+
+.clock {
+  font-size: 0;
+  text-align: center;
+}
+
+.clock .digit {
+  display: inline-block;
+  width: 60px;  
+  margin: 10px;
+  /*-webkit-transform: skewX(-2deg);
+  transform: skewX(-2deg);*/
+}
+
+.clock .digit#digit-2 .cell {
+  -webkit-transition: opacity 50ms ease;
+  transition: opacity 50ms ease;
+}
+
+.clock .digit#digit-3 .cell,
+.clock .digit#digit-4 .cell,
+.clock .digit#digit-5 .cell,
+.clock .digit#digit-6 .cell,
+.clock .digit#digit-7 .cell,
+.clock .digit#digit-8 .cell,
+.clock .digit#digit-9 .cell,
+.clock .digit#digit-10 .cell,
+.clock .digit#digit-11 .cell {
+  -webkit-transition: opacity 100ms ease;
+  transition: opacity 100ms ease;
+}
+
+.clock .digit .cell {
+  width: 11px;
+  height: 11px;
+  margin: 2px;
+  background-color: white;
+  border-radius: 2px;
+  display: inline-block;
+  opacity: 0.1;
+}
+
+.clock .digit .cell.on { opacity: 1; }
