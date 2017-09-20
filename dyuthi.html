@@ -659,8 +659,8 @@ function render() {
   renderDigit(digit5, minutes%10);
   renderDigit(digit4, parseInt(seconds/10));
   renderDigit(digit3, seconds%10);
-  renderDigit(digit2, parseInt(milliseconds/100)%10);
-  renderDigit(digit1, (milliseconds/10)%10);
+  renderDigit(digit1, parseInt(milliseconds/100)%10);
+  renderDigit(digit2, (milliseconds/10)%10);
   renderDigit(digit0, milliseconds%10);
 
   requestAnimationFrame(render);
