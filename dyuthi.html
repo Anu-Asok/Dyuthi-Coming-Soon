@@ -22,9 +22,9 @@
     <link href="css/new-age.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="css/loader.css">
-	
+
 <style>
-  
+
 .clock {
   font-size: 0;
   text-align: center;
@@ -32,7 +32,7 @@
 
 .clock .digit {
   display: inline-block;
-  width: 60px;  
+  width: 60px;
   margin: 10px;
   /*-webkit-transform: skewX(-2deg);
   transform: skewX(-2deg);*/
@@ -439,7 +439,7 @@
   };
   requestAnimationFrame(update);
 </script>
-   
+
       <!--<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         Menu
         <i class="fa fa-bars"></i>
@@ -478,7 +478,7 @@
     <!-- Custom scripts for this template -->
     <script src="js/new-age.min.js"></script>
 	<script>
-	var grad = new Date("Sep 21, 2017 11:59:59"),
+	var grad = new Date("Sep 21, 2017 23:59:59"),
   digit0 = $('#digit-0');
   digit1 = $('#digit-1'),
   digit2 = $('#digit-2'),
@@ -619,7 +619,7 @@ function render() {
 
     var distance = grad.getTime() -now.getTime();
 
-    
+
     var milliseconds = distance;
     // Time calculations for days, hours, minutes and seconds
   var days = Math.floor(milliseconds / (1000 * 60 * 60 * 24));
