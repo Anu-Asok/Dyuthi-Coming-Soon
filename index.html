@@ -1,2114 +1,505 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="theme-color" content="black"/>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <meta name="theme-color" content="black" />
+    <link rel="stylesheet" href="/assets/css/flipclock.css">
+    <meta property="og:url" content="http://dyuthi.in" />
+    <meta property="og:description" content="The days of flabbergasting fiesta is coming back this year, with more on the anvil, more to the show and yet more to its pomp! The unchallenged pride of GEC, its annual technical multifest, the DYUTHI'17, awaits to be unfurled and we invite you to the land of the grandiose!"/>
+    <meta property="og:title" content="Dyuthi 17 | Coming Soon"/>
+    <meta property="og:image" content="dyuthi-icon.gif">
     <title>Dyuthi 17</title>
-
-    <link rel="stylesheet" href="game.css">
-    <link rel="stylesheet" href="scotch.css">
-    <script src="libraries/p5.min.js" type="text/javascript"></script>
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="vendor/simple-line-icons/css/simple-line-icons.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+    <link rel="shortcut icon" href="dyuthi-icon.gif">
+    <link href="css/new-age.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/book.css" rel="stylesheet">
+    <script src="libraries/p5.js" type="text/javascript"></script>
+    <script src="sketch.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="css/book.css">
+    <link rel="stylesheet" href="css/loader.css">
   </head>
   <body>
+    <div class="cssload-box-loading" id="loader"></div>
+    <div id="page-top" class="animate-bottom" style="display:none;">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+      <a class="navbar-brand" href="#page-top">Dyuthi 17</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fa fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#about">About Dyuthi</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#portfolio">Photos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#events">Events</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#sponsors">Sponsors</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#organisers">Organisers</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#follow-us">Follow us</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div id="can">
+      <div class="your-clock"></div>
 
-  <!--  -->
-  <div id="b">
-    <div id="timer"><span id="seconds">10</span> seconds</div>
-    <div id="can" style="display:none"></div>
-    <p id="rules">
-      Play "Tap the lantern" while website loads...
-      <br>
-      <button type="button" class="next" id="next">Next > </button>
-    </p>
-    <div id="ready">
-      Website is getting ready...
-      <img src="ring.gif" id="ring">
+
     </div>
-  </div>
-  <section id="topper" data-midnight="the-darkness" style="height: 826px; display:none;">
-    <div class="container">
+    <section class="download text-center bg-light" id="about">
+      <div class="container">
         <div class="row">
-            <div class="col-md-8 col-md-offset-2 contents">
-                <div class="brand clearfix">
-                    <svg
-                    xmlns:dc="http://purl.org/dc/elements/1.1/"
-                    xmlns:cc="http://creativecommons.org/ns#"
-                    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-                    xmlns:svg="http://www.w3.org/2000/svg"
-                    xmlns="http://www.w3.org/2000/svg"
-                    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-                    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-                    version="1.1"
-                    id="logo"
-                    x="0px"
-                    y="0px"
-                    viewBox="0 0 277.8 23.9"
-                    enable-background="new 0 0 277.8 23.9"
-                    xml:space="preserve"
-                    inkscape:version="0.91 r13725"
-                    sodipodi:docname="dig.svg"><metadata
-                      id="metadata777"><rdf:RDF><cc:Work
-                          rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
-                            rdf:resource="http://purl.org/dc/dcmitype/StillImage" /></cc:Work></rdf:RDF></metadata><defs
-                      id="defs775" /><sodipodi:namedview
-                      pagecolor="#ffffff"
-                      bordercolor="#666666"
-                      borderopacity="1"
-                      objecttolerance="10"
-                      gridtolerance="10"
-                      guidetolerance="10"
-                      inkscape:pageopacity="0"
-                      inkscape:pageshadow="2"
-                      inkscape:window-width="1440"
-                      inkscape:window-height="789"
-                      id="namedview773"
-                      showgrid="false"
-                      inkscape:zoom="9.1997053"
-                      inkscape:cx="112.80636"
-                      inkscape:cy="12.180115"
-                      inkscape:window-x="0"
-                      inkscape:window-y="1"
-                      inkscape:window-maximized="1"
-                      inkscape:current-layer="g17" /><g
-                      class="word word-digital"
-                      id="g17"><g
-                        id="g6625"
-                        class="letter d"><rect
-                          id="rect23"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="5.1999998"
-                          x="2" /><rect
-                          id="rect25"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="6.9000001"
-                          x="2" /><rect
-                          id="rect27"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="6.9000001"
-                          x="0.30000305" /><rect
-                          id="rect29"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="5.1999998"
-                          x="0.30000305" /><rect
-                          id="rect33"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="10.2"
-                          x="2" /><rect
-                          id="rect35"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="11.9"
-                          x="2" /><rect
-                          id="rect37"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="11.9"
-                          x="0.30000305" /><rect
-                          id="rect39"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="10.2"
-                          x="0.30000305" /><rect
-                          id="rect43"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="15.2"
-                          x="2" /><rect
-                          id="rect45"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="16.9"
-                          x="2" /><rect
-                          id="rect47"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="16.9"
-                          x="0.30000305" /><rect
-                          id="rect49"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="15.2"
-                          x="0.30000305" /><rect
-                          id="rect53"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="5.1999998"
-                          x="17" /><rect
-                          id="rect55"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="6.9000001"
-                          x="17" /><rect
-                          id="rect57"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="6.9000001"
-                          x="15.300003" /><rect
-                          id="rect59"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="5.1999998"
-                          x="15.300003" /><rect
-                          id="rect63"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="10.2"
-                          x="17" /><rect
-                          id="rect65"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="11.9"
-                          x="17" /><rect
-                          id="rect67"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="11.9"
-                          x="15.300003" /><rect
-                          id="rect69"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="10.2"
-                          x="15.300003" /><rect
-                          id="rect73"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="15.2"
-                          x="17" /><rect
-                          id="rect75"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="16.9"
-                          x="17" /><rect
-                          id="rect77"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="16.9"
-                          x="15.300003" /><rect
-                          id="rect79"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="15.2"
-                          x="15.300003" /><rect
-                          id="rect83"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="0.2"
-                          x="12" /><rect
-                          id="rect85"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="1.9"
-                          x="12" /><rect
-                          id="rect87"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="1.9"
-                          x="10.300003" /><rect
-                          id="rect89"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="0.2"
-                          x="10.300003" /><rect
-                          id="rect93"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="0.2"
-                          x="7" /><rect
-                          id="rect95"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="1.9"
-                          x="7" /><rect
-                          id="rect97"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="1.9"
-                          x="5.3000031" /><rect
-                          id="rect99"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="0.2"
-                          x="5.3000031" /><rect
-                          id="rect103"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="0.2"
-                          x="2" /><rect
-                          id="rect105"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="1.9"
-                          x="2" /><rect
-                          id="rect107"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="1.9"
-                          x="0.30000305" /><rect
-                          id="rect109"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="0.2"
-                          x="0.30000305" /><rect
-                          id="rect113"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="20.200001"
-                          x="7" /><rect
-                          id="rect115"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="21.9"
-                          x="7" /><rect
-                          id="rect117"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="21.9"
-                          x="5.3000031" /><rect
-                          id="rect119"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="20.200001"
-                          x="5.3000031" /><rect
-                          id="rect123"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="20.200001"
-                          x="12" /><rect
-                          id="rect125"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="21.9"
-                          x="12" /><rect
-                          id="rect127"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="21.9"
-                          x="10.300003" /><rect
-                          id="rect129"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="20.200001"
-                          x="10.300003" /><rect
-                          id="rect133"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="20.200001"
-                          x="2" /><rect
-                          id="rect135"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="21.9"
-                          x="2" /><rect
-                          id="rect137"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="21.9"
-                          x="0.30000305" /><rect
-                          id="rect139"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="20.200001"
-                          x="0.30000305" /></g><g
-                        id="g8379"
-                        class="letter i i-1"><rect
-                          id="rect145"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="5.1999998"
-                          x="122.1" /><rect
-                          id="rect147"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="6.9000001"
-                          x="122.1" /><rect
-                          id="rect149"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="6.9000001"
-                          x="120.4" /><rect
-                          id="rect151"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="5.1999998"
-                          x="120.4" /><rect
-                          id="rect155"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="10.2"
-                          x="122.1" /><rect
-                          id="rect157"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="11.9"
-                          x="122.1" /><rect
-                          id="rect159"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="11.9"
-                          x="120.4" /><rect
-                          id="rect161"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="10.2"
-                          x="120.4" /><rect
-                          id="rect165"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="15.2"
-                          x="122.1" /><rect
-                          id="rect167"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="16.9"
-                          x="122.1" /><rect
-                          id="rect169"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="16.9"
-                          x="120.4" /><rect
-                          id="rect171"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="15.2"
-                          x="120.4" /><rect
-                          id="rect175"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="20.200001"
-                          x="122.1" /><rect
-                          id="rect177"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="21.9"
-                          x="122.1" /><rect
-                          id="rect179"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="21.9"
-                          x="120.4" /><rect
-                          id="rect181"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="20.200001"
-                          x="120.4" /><rect
-                          id="rect185"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="0.2"
-                          x="127.1" /><rect
-                          id="rect187"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="1.9"
-                          x="127.1" /><rect
-                          id="rect189"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="1.9"
-                          x="125.4" /><rect
-                          id="rect191"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="0.2"
-                          x="125.4" /><rect
-                          id="rect195"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="0.2"
-                          x="122.1" /><rect
-                          id="rect197"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="1.9"
-                          x="122.1" /><rect
-                          id="rect199"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="1.9"
-                          x="120.4" /><rect
-                          id="rect201"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="0.2"
-                          x="120.4" /><rect
-                          id="rect205"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="0.2"
-                          x="117.1" /><rect
-                          id="rect207"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="1.9"
-                          x="117.1" /><rect
-                          id="rect209"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="1.9"
-                          x="115.4" /><rect
-                          id="rect211"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="0.2"
-                          x="115.4" /><rect
-                          id="rect215"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="20.200001"
-                          x="127.1" /><rect
-                          id="rect217"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="21.9"
-                          x="127.1" /><rect
-                          id="rect219"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="21.9"
-                          x="125.4" /><rect
-                          id="rect221"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="20.200001"
-                          x="125.4" /><rect
-                          id="rect225"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="20.200001"
-                          x="117.1" /><rect
-                          id="rect227"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="21.9"
-                          x="117.1" /><rect
-                          id="rect229"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="21.9"
-                          x="115.4" /><rect
-                          id="rect231"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="20.200001"
-                          x="115.4" /></g><g
-                        id="g6765"
-                        class="letter g"><rect
-                          id="rect237"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="5.1999998"
-                          x="26" /><rect
-                          id="rect239"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="6.9000001"
-                          x="26" /><rect
-                          id="rect241"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="6.9000001"
-                          x="24.300003" /><rect
-                          id="rect243"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="5.1999998"
-                          x="24.300003" /><rect
-                          id="rect247"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="10.2"
-                          x="26" /><rect
-                          id="rect249"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="11.9"
-                          x="26" /><rect
-                          id="rect251"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="11.9"
-                          x="24.300003" /><rect
-                          id="rect253"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="10.2"
-                          x="24.300003" /><rect
-                          id="rect257"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="0.087838806"
-                          x="26" /><rect
-                          id="rect259"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="1.7878386"
-                          x="26" /><rect
-                          id="rect261"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="1.7878386"
-                          x="24.300003" /><rect
-                          id="rect263"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="0.087838806"
-                          x="24.300003" /><rect
-                          id="rect267"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="10.2"
-                          x="41" /><rect
-                          id="rect269"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="11.9"
-                          x="41" /><rect
-                          id="rect271"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="11.9"
-                          x="39.300003" /><rect
-                          id="rect273"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="10.2"
-                          x="39.300003" /><rect
-                          id="rect277"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="5.0717573"
-                          x="40.837662" /><rect
-                          id="rect279"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="6.7717571"
-                          x="40.837662" /><rect
-                          id="rect281"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="6.7717571"
-                          x="39.137665" /><rect
-                          id="rect283"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="5.0717573"
-                          x="39.137665" /><rect
-                          id="rect297"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="0.2"
-                          x="41" /><rect
-                          id="rect299"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="1.9"
-                          x="41" /><rect
-                          id="rect301"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="1.9"
-                          x="39.300003" /><rect
-                          id="rect303"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="0.2"
-                          x="39.300003" /><rect
-                          id="rect307"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="10.353483"
-                          x="36" /><rect
-                          id="rect309"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="12.053483"
-                          x="36" /><rect
-                          id="rect311"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="12.053483"
-                          x="34.300003" /><rect
-                          id="rect313"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="10.353483"
-                          x="34.300003" /><rect
-                          id="rect317"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="10.353483"
-                          x="31.23613" /><rect
-                          id="rect319"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="12.053483"
-                          x="31.23613" /><rect
-                          id="rect321"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="12.053483"
-                          x="29.536133" /><rect
-                          id="rect323"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="10.353483"
-                          x="29.536133" /><rect
-                          id="rect327"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="20.318064"
-                          x="33.79253" /><rect
-                          id="rect329"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="22.018063"
-                          x="33.79253" /><rect
-                          id="rect331"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="22.018063"
-                          x="32.092533" /><rect
-                          id="rect333"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="20.318064"
-                          x="32.092533" /><rect
-                          id="rect337"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="15.713578"
-                          x="33.715469" /><rect
-                          id="rect339"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="17.413576"
-                          x="33.715469" /><rect
-                          id="rect341"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="17.413576"
-                          x="32.015472" /><rect
-                          id="rect343"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="15.713578"
-                          x="32.015472" /></g><g
-                        id="g8093"
-                        class="letter t"><rect
-                          id="rect441"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="0.2"
-                          x="87" /><rect
-                          id="rect443"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="1.9"
-                          x="87" /><rect
-                          id="rect445"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="1.9"
-                          x="85.300003" /><rect
-                          id="rect447"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="0.2"
-                          x="85.300003" /><rect
-                          id="rect451"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="0.2"
-                          x="82" /><rect
-                          id="rect453"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="1.9"
-                          x="82" /><rect
-                          id="rect455"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="1.9"
-                          x="80.300003" /><rect
-                          id="rect457"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="0.2"
-                          x="80.300003" /><rect
-                          id="rect461"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="0.2"
-                          x="77" /><rect
-                          id="rect463"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="1.9"
-                          x="77" /><rect
-                          id="rect465"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="1.9"
-                          x="75.300003" /><rect
-                          id="rect467"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="0.2"
-                          x="75.300003" /><rect
-                          id="rect471"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="5.1999998"
-                          x="79.5" /><rect
-                          id="rect473"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="6.9000001"
-                          x="79.5" /><rect
-                          id="rect475"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="6.9000001"
-                          x="77.800003" /><rect
-                          id="rect477"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="5.1999998"
-                          x="77.800003" /><rect
-                          id="rect481"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="10.2"
-                          x="79.5" /><rect
-                          id="rect483"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="11.9"
-                          x="79.5" /><rect
-                          id="rect485"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="11.9"
-                          x="77.800003" /><rect
-                          id="rect487"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="10.2"
-                          x="77.800003" /><rect
-                          id="rect491"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="15.2"
-                          x="79.5" /><rect
-                          id="rect493"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="16.9"
-                          x="79.5" /><rect
-                          id="rect495"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="16.9"
-                          x="77.800003" /><rect
-                          id="rect497"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="15.2"
-                          x="77.800003" /><rect
-                          id="rect501"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="20.200001"
-                          x="79.5" /><rect
-                          id="rect503"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="21.9"
-                          x="79.5" /><rect
-                          id="rect505"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="21.9"
-                          x="77.800003" /><rect
-                          id="rect507"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="20.200001"
-                          x="77.800003" /><rect
-                          id="rect511"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="0.2"
-                          x="72" /><rect
-                          id="rect513"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="1.9"
-                          x="72" /><rect
-                          id="rect515"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="1.9"
-                          x="70.300003" /><rect
-                          id="rect517"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="0.2"
-                          x="70.300003" /></g><g
-                        id="g8244"
-                        class="letter a"><rect
-                          id="rect523"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="15.248"
-                          x="94.841003" /><rect
-                          id="rect525"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="16.948"
-                          x="94.841003" /><rect
-                          id="rect527"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="16.948"
-                          x="93.141006" /><rect
-                          id="rect529"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="15.248"
-                          x="93.141006" /><rect
-                          id="rect533"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="10.248"
-                          x="94.841003" /><rect
-                          id="rect535"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="11.948"
-                          x="94.841003" /><rect
-                          id="rect537"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="11.948"
-                          x="93.141006" /><rect
-                          id="rect539"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="10.248"
-                          x="93.141006" /><rect
-                          id="rect543"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="10.248"
-                          x="94.841003" /><rect
-                          id="rect545"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="11.948"
-                          x="94.841003" /><rect
-                          id="rect547"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="11.948"
-                          x="93.141006" /><rect
-                          id="rect549"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="10.248"
-                          x="93.141006" /><rect
-                          id="rect553"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="5.2479997"
-                          x="94.841003" /><rect
-                          id="rect555"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="6.948"
-                          x="94.841003" /><rect
-                          id="rect557"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="6.948"
-                          x="93.141006" /><rect
-                          id="rect559"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="5.2479997"
-                          x="93.141006" /><rect
-                          id="rect563"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="0.24800006"
-                          x="94.841003" /><rect
-                          id="rect565"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="1.9480001"
-                          x="94.841003" /><rect
-                          id="rect567"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="1.9480001"
-                          x="93.141006" /><rect
-                          id="rect569"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="0.24800006"
-                          x="93.141006" /><rect
-                          id="rect573"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="0.24800006"
-                          x="109.841" /><rect
-                          id="rect575"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="1.9480001"
-                          x="109.841" /><rect
-                          id="rect577"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="1.9480001"
-                          x="108.14101" /><rect
-                          id="rect579"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="0.24800006"
-                          x="108.14101" /><rect
-                          id="rect583"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="10.248"
-                          x="99.841003" /><rect
-                          id="rect585"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="11.948"
-                          x="99.841003" /><rect
-                          id="rect587"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="11.948"
-                          x="98.141006" /><rect
-                          id="rect589"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="10.248"
-                          x="98.141006" /><rect
-                          id="rect593"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="10.248"
-                          x="104.841" /><rect
-                          id="rect595"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="11.948"
-                          x="104.841" /><rect
-                          id="rect597"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="11.948"
-                          x="103.14101" /><rect
-                          id="rect599"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="10.248"
-                          x="103.14101" /><rect
-                          id="rect603"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="10.248"
-                          x="109.841" /><rect
-                          id="rect605"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="11.948"
-                          x="109.841" /><rect
-                          id="rect607"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="11.948"
-                          x="108.14101" /><rect
-                          id="rect609"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="10.248"
-                          x="108.14101" /><rect
-                          id="rect613"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="5.2479997"
-                          x="109.841" /><rect
-                          id="rect615"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="6.948"
-                          x="109.841" /><rect
-                          id="rect617"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="6.948"
-                          x="108.14101" /><rect
-                          id="rect619"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="5.2479997"
-                          x="108.14101" /><rect
-                          id="rect623"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="15.248"
-                          x="109.841" /><rect
-                          id="rect625"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="16.948"
-                          x="109.841" /><rect
-                          id="rect627"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="16.948"
-                          x="108.14101" /><rect
-                          id="rect629"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="15.248"
-                          x="108.14101" /><rect
-                          id="rect633"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="20.248001"
-                          x="109.841" /><rect
-                          id="rect635"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="21.948"
-                          x="109.841" /><rect
-                          id="rect637"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="21.948"
-                          x="108.14101" /><rect
-                          id="rect639"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="20.248001"
-                          x="108.14101" /><rect
-                          id="rect643"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="20.248001"
-                          x="94.841003" /><rect
-                          id="rect645"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="21.948"
-                          x="94.841003" /><rect
-                          id="rect647"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="21.948"
-                          x="93.141006" /><rect
-                          id="rect649"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="20.248001"
-                          x="93.141006" /></g><g
-                        id="g6915"
-                        class="letter l"><rect
-                          id="rect655"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="0.2"
-                          x="49" /><rect
-                          id="rect657"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="1.9"
-                          x="49" /><rect
-                          id="rect659"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="1.9"
-                          x="47.299988" /><rect
-                          id="rect661"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="0.2"
-                          x="47.299988" /><rect
-                          id="rect665"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="5.1999998"
-                          x="49" /><rect
-                          id="rect667"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="6.9000001"
-                          x="49" /><rect
-                          id="rect669"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="6.9000001"
-                          x="47.299988" /><rect
-                          id="rect671"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="5.1999998"
-                          x="47.299988" /><rect
-                          id="rect675"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="10.2"
-                          x="49" /><rect
-                          id="rect677"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="11.9"
-                          x="49" /><rect
-                          id="rect679"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="11.9"
-                          x="47.299988" /><rect
-                          id="rect681"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="10.2"
-                          x="47.299988" /><rect
-                          id="rect685"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="15.2"
-                          x="49" /><rect
-                          id="rect687"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="16.9"
-                          x="49" /><rect
-                          id="rect689"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="16.9"
-                          x="47.299988" /><rect
-                          id="rect691"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="15.2"
-                          x="47.299988" /><rect
-                          id="rect695"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="20.200001"
-                          x="49" /><rect
-                          id="rect697"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="21.9"
-                          x="49" /><rect
-                          id="rect699"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="21.9"
-                          x="47.299988" /><rect
-                          id="rect701"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="20.200001"
-                          x="47.299988" /><rect
-                          id="rect705"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="20.200001"
-                          x="54" /><rect
-                          id="rect707"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="21.9"
-                          x="54" /><rect
-                          id="rect709"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="21.9"
-                          x="52.299988" /><rect
-                          id="rect711"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="20.200001"
-                          x="52.299988" /><rect
-                          id="rect715"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="20.200001"
-                          x="59" /><rect
-                          id="rect717"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="21.9"
-                          x="59" /><rect
-                          id="rect719"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="21.9"
-                          x="57.299988" /><rect
-                          id="rect721"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="20.200001"
-                          x="57.299988" /><rect
-                          id="rect725"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="20.200001"
-                          x="64" /><rect
-                          id="rect727"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="21.9"
-                          x="64" /><rect
-                          id="rect729"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="21.9"
-                          x="62.299988" /><rect
-                          id="rect731"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="20.200001"
-                          x="62.299988" /><rect
-                          id="rect735"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="0.2"
-                          x="64" /><rect
-                          id="rect737"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="1.9"
-                          x="64" /><rect
-                          id="rect739"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="1.9"
-                          x="62.299988" /><rect
-                          id="rect741"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="0.2"
-                          x="62.299988" /><rect
-                          id="rect745"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="5.1999998"
-                          x="64" /><rect
-                          id="rect747"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="6.9000001"
-                          x="64" /><rect
-                          id="rect749"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="6.9000001"
-                          x="62.299988" /><rect
-                          id="rect751"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="5.1999998"
-                          x="62.299988" /><rect
-                          id="rect755"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="10.2"
-                          x="64" /><rect
-                          id="rect757"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="11.9"
-                          x="64" /><rect
-                          id="rect759"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="11.9"
-                          x="62.299988" /><rect
-                          id="rect761"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="10.2"
-                          x="62.299988" /><rect
-                          id="rect765"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="15.2"
-                          x="64" /><rect
-                          id="rect767"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="16.9"
-                          x="64" /><rect
-                          id="rect769"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="16.9"
-                          x="62.299988" /><rect
-                          id="rect771"
-                          style="fill:#020202"
-                          height="1.8"
-                          width="1.8"
-                          y="15.2"
-                          x="62.299988" /></g></g></svg>
-                        <div class="hover-blocks clearfix">
-                        <span class="hover-block d" data-color="#ff6f35" data-letter="d"></span>
-                        <span class="hover-block g" data-color="#f7df00" data-letter="g"></span>
-                        <span class="hover-block l" data-color="#8b3cff" data-letter="l"></span>
-                        <span class="hover-block t" data-color="#26ff6c" data-letter="t"></span>
-                        <span class="hover-block a" data-color="#268bff" data-letter="a"></span>
-                        <span class="hover-block i-1" data-color="#ffb22d" data-letter="i-1"></span>
-                    </div>
-                </div>
-            </div>
+          <div class="col-md-12 mx-auto">
+            <h2 class="section-heading">Dyuthi 2k17</h2>
+            <br>
+            <p  style="text-align:center; font-size:1.2em; color:#464a4e; margin-bottom: 5px;" >
+     The days of flabbergasting fiesta is coming back this year,
+     with more on the anvil, more to the show and yet more to its pomp! The unchallenged
+     pride of GEC, its cultural technical multifest, the DYUTHI'17, awaits to be unfurled
+     and we invite you to the land of the grandiose!</p>
+          </div>
+          <br>
+          <div class="col-md-12 mx-auto">
+            <img src="/img/dwld.png" alt="Download Brochure" id="dwld-brochure">
+          </div>
         </div>
-    </div>
+      </div>
+    </section>
+    <section id="portfolio">
+      <div class="container text-center">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h3 class="section-subheading text-muted">Dyuthi 16 Memories</h3>
+            <br>
+          </div>
+        </div>
+        <embed src="d.mp3" width="0" height="0" autostart="true"/>
+        <div class="row">
+          <div class="col-md-4 col-sm-6 portfolio-item">
+            <div class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
+              <div class="portfolio-hover">
+                <div class="portfolio-hover-content">
+                  <i class="fa fa-plus fa-2x"></i>
+                </div>
+              </div>
+              <img class="img-fluid" src="img/portfolio/1.jpg">
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 portfolio-item">
+            <div class="portfolio-link" data-toggle="modal" href="#portfolioModal2">
+              <div class="portfolio-hover">
+                <div class="portfolio-hover-content">
+                  <i class="fa fa-plus fa-2x"></i>
+                </div>
+              </div>
+              <img class="img-fluid" src="img/portfolio/2.jpg">
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 portfolio-item">
+            <div class="portfolio-link" data-toggle="modal" href="#portfolioModal3">
+              <div class="portfolio-hover">
+                <div class="portfolio-hover-content">
+                  <i class="fa fa-plus fa-2x"></i>
+                </div>
+              </div>
+              <img class="img-fluid" src="img/portfolio/3.jpg">
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 portfolio-item">
+            <div class="portfolio-link" data-toggle="modal" href="#portfolioModal4">
+              <div class="portfolio-hover">
+                <div class="portfolio-hover-content">
+                  <i class="fa fa-plus fa-2x"></i>
+                </div>
+              </div>
+              <img class="img-fluid" src="img/portfolio/4.jpg">
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 portfolio-item">
+            <div class="portfolio-link" data-toggle="modal" href="#portfolioModal5">
+              <div class="portfolio-hover">
+                <div class="portfolio-hover-content">
+                  <i class="fa fa-plus fa-2x"></i>
+                </div>
+              </div>
+              <img class="img-fluid" src="img/portfolio/5.jpg">
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 portfolio-item">
+            <div class="portfolio-link" data-toggle="modal" href="#portfolioModal6">
+              <div class="portfolio-hover">
+                <div class="portfolio-hover-content">
+                  <i class="fa fa-plus fa-2x"></i>
+                </div>
+              </div>
+              <img class="img-fluid" src="img/portfolio/6.jpg">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="events" class="bg-light">
+       <div class="container">
+         <div class="row">
+           <div class="col-lg-12 text-center">
+             <h3 class="section-subheading text-muted">Events of Dyuthi 16</h3>
+             <br>
+           </div>
+         </div>
+         <div class="row">
+           <div class="col-lg-12">
+             <ul class="timeline">
+               <li>
+                 <div class="timeline-image">
+                   <img class="rounded-circle img-fluid" src="img/about/1.jpg" alt="">
+                 </div>
+                 <div class="timeline-panel">
+                   <div class="timeline-heading">
+                     <h4>Mitad Codigo</h4>
+                     <h4 class="subheading"></h4>
+                   </div>
+                   <div class="timeline-body">
+                     <p class="text-muted">Think two coders is better than one?... then think again……..Introducing Mitad Código which takes teamwork and coordination to a whole new level.</p>
+                   </div>
+                 </div>
+               </li>
+               <li class="timeline-inverted">
+                 <div class="timeline-image">
+                   <img class="rounded-circle img-fluid" src="img/about/2.jpg" alt="">
+                 </div>
+                 <div class="timeline-panel">
+                   <div class="timeline-heading">
+                     <h4>Zero Gravity</h4>
+                     <h4 class="subheading"></h4>
+                   </div>
+                   <div class="timeline-body">
+                     <p class="text-muted">To dance is to breathe! Wanna dance like nobodys watching you? And make your own steps while at it? This one is for you! Zero Gravity is an individual freestyle dancing competition which will be conducted on an open stage.</p>
+                   </div>
+                 </div>
+               </li>
+               <li>
+                 <div class="timeline-image">
+                   <img class="rounded-circle img-fluid" src="img/about/3.jpg" alt="">
+                 </div>
+                 <div class="timeline-panel">
+                   <div class="timeline-heading">
+                     <h4>Quizzards of OZ</h4>
+                     <h4 class="subheading"></h4>
+                   </div>
+                   <div class="timeline-body">
+                     <p class="text-muted">Where every instant is a matter of victory and defeat,
+Where even the trivial trivia are a cause to succeed,
+Where Minds are to be sharp and memories quick,
+It is there Gyanartha takes you this Dyuthi 16</p>
+                   </div>
+                 </div>
+               </li>
+
+             </ul>
+             <br>
+             <div class="container text-center">
+               <h4 class="subheading text-muted">
+                 And many more...
+               </h4>
+             </div>
+           </div>
+         </div>
+       </div>
+     </section>
+     <div id="sponsors">
+       <br><br>
+       <div class="col-lg-12 text-center">
+         <h3 class="section-subheading text-muted">Previous Sponsors</h3>
+         <br>
+       </div>
+       <!-- <div style="max-width:100%;"> -->
+         <img src="img/sponsors.jpg" style="width:100%;height:auto;padding:0px 10px;">
+       <!-- </div> -->
+       <br><br>
+     </div>
+       <div id="organisers" class="bg-light">
+         <br>
+         <br>
+         <div class="col-lg-12 text-center">
+           <h3 class="section-subheading text-muted">Organisers</h3>
+           <br>
+         </div>
+   				<ul class="align">
+
+             <li>
+   						<figure class='book'>
+   							<ul class='hardcover_front'>
+   								<li>
+                     <img class="book-front-img" src="img/jishnunadh.jpg">
+   								</li>
+   								<li></li>
+   							</ul>
+                 <ul class='page'>
+   								<li></li>
+   								<li>
+                     <br>
+                     <br>
+                     <b>Jishnunadh N </b><br/><br/>
+                     sponsorship@dyuthi.in <br><br/>
+                     +91 97466 74282
+   								</li>
+   								<li></li>
+   								<li></li>
+   								<li></li>
+   							</ul>
+                 <ul class='hardcover_back'>
+   								<li></li>
+   								<li></li>
+   							</ul>
+   							<ul class='book_spine'>
+   								<li></li>
+   								<li></li>
+   							</ul>
+   						</figure>
+   					</li>
+             <li>
+   						<figure class='book'>
+   							<ul class='hardcover_front'>
+   								<li>
+                    <img class="book-front-img" src="img/rashad.jpg">
+   								</li>
+   								<li></li>
+   							</ul>
+                 <ul class='page'>
+   								<li></li>
+   								<li>
+                     <br>
+                     <br>
+                     <b>Razal Abdulla </b><br/><br/>
+                     sponsorship@dyuthi.in <br><br/>
+                     +91 94006 00261
+   								</li>
+   								<li></li>
+   								<li></li>
+   								<li></li>
+   							</ul>
+                 <ul class='hardcover_back'>
+   								<li></li>
+   								<li></li>
+   							</ul>
+   							<ul class='book_spine'>
+   								<li></li>
+   								<li></li>
+   							</ul>
+   						</figure>
+   					</li>
+             <li>
+   						<figure class='book'>
+   							<ul class='hardcover_front'>
+   								<li>
+                    <img class="book-front-img" src="img/lakshad.jpg">
+   								</li>
+   								<li></li>
+   							</ul>
+                 <ul class='page'>
+   								<li></li>
+   								<li>
+                     <br>
+                     <br>
+                     <b>Lakshad K Suresh </b><br/><br/>
+                     sponsorship@dyuthi.in <br><br/>
+                     +91 94955 11450
+   								</li>
+   								<li></li>
+   								<li></li>
+   								<li></li>
+   							</ul>
+                 <ul class='hardcover_back'>
+   								<li></li>
+   								<li></li>
+   							</ul>
+   							<ul class='book_spine'>
+   								<li></li>
+   								<li></li>
+   							</ul>
+   						</figure>
+   					</li>
+   				</ul>
+   			</div>
+
+    <section class="contact" id="follow-us">
+      <div class="container">
+        <h2>Follow us on</h2>
+        <ul class="list-inline list-social">
+          <li class="list-inline-item social-facebook">
+            <a target="_blank" href="https://www.facebook.com/dyuthigec/">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li class="list-inline-item social-google-plus">
+            <a target="_blank" href="https://www.youtube.com/user/DyuthiOfficial">
+              <i class="fa fa-youtube"></i>
+            </a>
+          </li>
+          <li class="list-inline-item social-twitter">
+            <a target="_blank" href="https://www.twitter.com/dyuthigec">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
     </section>
 
+    <footer>
+      <div class="container">
+        <p>© Copyright 2017 Dyuthi - All Rights Reserved</p>
+      </div>
+    </footer>
+    </div>
+    <!-- Portfolio Modals -->
+     <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="close-modal" data-dismiss="modal">
+            <div class="lr">
+              <div class="rl"></div>
+            </div>
+          </div>
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-8 mx-auto">
+                <div class="modal-body">
+                  <img class="img-fluid d-block mx-auto" src="img/portfolio/1.jpg" alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+     <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="close-modal" data-dismiss="modal">
+            <div class="lr">
+              <div class="rl"></div>
+            </div>
+          </div>
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-8 mx-auto">
+                <div class="modal-body">
+                  <img class="img-fluid d-block mx-auto" src="img/portfolio/2.jpg" alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="close-modal" data-dismiss="modal">
+            <div class="lr">
+              <div class="rl"></div>
+            </div>
+          </div>
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-8 mx-auto">
+                <div class="modal-body">
+                  <img class="img-fluid d-block mx-auto" src="img/portfolio/3.jpg" alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="close-modal" data-dismiss="modal">
+            <div class="lr">
+              <div class="rl"></div>
+            </div>
+          </div>
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-8 mx-auto">
+                <div class="modal-body">
+                  <img class="img-fluid d-block mx-auto" src="img/portfolio/4.jpg" alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="close-modal" data-dismiss="modal">
+            <div class="lr">
+              <div class="rl"></div>
+            </div>
+          </div>
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-8 mx-auto">
+                <div class="modal-body">
+                  <img class="img-fluid d-block mx-auto" src="img/portfolio/5.jpg" alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="close-modal" data-dismiss="modal">
+            <div class="lr">
+              <div class="rl"></div>
+            </div>
+          </div>
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-8 mx-auto">
+                <div class="modal-body">
+                  <img class="img-fluid d-block mx-auto" src="img/portfolio/6.jpg" alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="/assets/js/libs/jquery.js"></script>
+		<script src="/assets/js/flipclock/flipclock.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/popper/popper.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 
-  <script src="sketch.js" type="text/javascript"></script>
-  <script type="text/javascript">
-    var next=document.getElementById('next');
-    var rules=document.getElementById('rules');
-    var seconds=document.getElementById('seconds');
-    var topper=document.getElementById('topper');
-    var can=document.getElementById('can');
-    next.onclick = function(){
-      rules.innerHTML=`
-        Timer starts the moment you click Play and you'll have 10 seconds to tap all the lanterns.
-        <br>
-        <button type="button" class="next" id="play">Play</button>
-      `;
-      play.onclick=function(){
-        rules.style.display='none';
-        var timer=document.getElementById('timer');
-        timer.style.display='block';
-        var date1=new Date();
-        can.style.display='block';
-        topper.style.display='block';
-        var time=0;
-        var x=setInterval(function(){
-          time+=1;
-          seconds.innerText=(10-time);
-          if(time>9){
-            clearInterval(x);
-            can.style.display='none';
-            topper.style.display='none';
-            rules.style.display='block';
-            rules.innerHTML=`
-              Time over!! You've tapped <span id="tap">${tap}</span> lanterns<br>
-              <button class="next" style="width:100px;" id="play-again">Play again</button>
-            `;
-            var play_again=document.getElementById('play-again');
-            play_again.onclick=function(){
-              for(var i=0;i<60;i++)
-              {
-                lantern[i].death = false;
-                if(i<30)
-                  lantern[i].w = (i+15) * mSize / 60;
-                else
-                  lantern[i].w = (i+1) * mSize / 60;
-              }
-              tap=0; time=0;
-              rules.style.display='none';
-              can.style.display='block';
-              topper.style.display='block';
-              seconds.innerText='10';
-              var y=setInterval(function(){
-                time+=1;
-                seconds.innerText=(10-time);
-                if(time>9){
-                  clearInterval(y);
-                  can.style.display='none';
-                  topper.style.display='none';
-                  var count=document.getElementById('tap');
-                  count.innerText=Math.round(tap);
-                  rules.style.display='block';
-                }
-              },1000);
-            }
-          }
-        },1000);
-      }
-    }
-    setTimeout(function(){
-      ready.innerText='Website is ready >';
-      ready.style.cursor='pointer';
-      ready.style.color='white';
-      ready.onclick=function(){
-        window.location = "dyuthi.html";
-      }
-    },7000);
-    </script>
-    <!--  -->
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/new-age.min.js"></script>
   </body>
-  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script data-cfasync="false" src="//cdnjs.cloudflare.com/ajax/libs/snap.svg/0.3.0/snap.svg-min.js"></script>
-  <script data-cfasync="false" src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/1.3.0/jquery.scrollmagic.min.js"></script>
-  <script data-cfasync="false" src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.14.2/TweenMax.min.js"></script>
 
-  <script type="text/javascript">
-
-  $(window).load(function() {
-
-      // TOPPER STUFF
-      fillTopper();
-      var topperHeight = $(window).height()
-      var scrollProgress = 5;
-      var topperScrollMagicController = new ScrollMagic({
-          globalSceneOptions: {
-              triggerHook: 'onLeave'
-          }
-      });
-      function getTopperHeight() {
-          return topperHeight / 1.5;
-      }
-      $(window).resize(function() {
-          topperHeight = $(window).height();
-          $('#topper').height($(window).height());
-
-          // Force better DOM repainting hack. Helps on mobile
-          $('html').addClass('force-gpu').removeClass('force-gpu');
-      });
-      var topperTextTween = TweenMax.staggerFromTo('#topper h1 span', 0.5,
-          {
-              y: 25,
-              opacity: 0
-          },
-          {
-              y: 0,
-              opacity: 1
-          },
-          0.075
-      );
-      var starScene = new ScrollScene({
-          triggerElement: '#topper',
-          duration: getTopperHeight,
-          offset: 0
-      })
-      .addTo(topperScrollMagicController)
-      .setTween(topperTextTween)
-      //.setPin('#topper')
-      .on('progress', function(e) {
-          scrollProgress = e.progress * 100 * 2;
-          if (scrollProgress <= 5) {
-              scrollProgress = 5;
-          }
-      })
-      .on('start', function(e) {
-          $('body').addClass('hide-those-particles');
-      });
-      var camera, scene, renderer, mouseX = 0, mouseY = 0, particles = [];
-
-      function update() {
-          updateParticles();
-          renderer.render( scene, camera );
-      }
-      function particleRender( context ) {
-          context.beginPath();
-          context.arc( 0, 0, 1, 0,  Math.PI * 2, true );
-          context.fill();
-      };
-      function updateParticles() {
-          for(var i=0; i<particles.length; i++) {
-              particle = particles[i];
-              particle.position.z +=  scrollProgress * 0.1;
-              if(particle.position.z>1000) particle.position.z-=2000;
-          }
-      }
-      function onMouseMove( event ) {
-          // Do nothing, based on scroll
-      }
-      $('.hover-block').hover(
-          function() {
-              explodeLetter($(this).parents('section').attr('id'), $(this).data('letter'), $(this).data('color'));
-          }, function() {
-              implodeLetter($(this).parents('section').attr('id'), $(this).data('letter'), $(this).data('color'));
-          }
-      );
-      introStuff();
-
-
-
-
-      // BLURB STUFF
-      var scrollMagicController = new ScrollMagic();
-      var blurbTween = TweenMax.staggerFromTo('#blurb .item', 0.5,
-          {
-              y: 50,
-              x: -50,
-              opacity: 0
-          },
-          {
-              y: 0,
-              x: 0,
-              opacity: 1
-          },
-          0.2
-      );
-      var blurbScene = new ScrollScene({
-          triggerElement: '#blurb .item',
-          duration: 500,
-          offset: -200
-      })
-      .setTween(blurbTween)
-      .addTo(scrollMagicController);
-
-
-
-
-
-
-      // FOOTER STUFF
-      var footerScene = new ScrollScene({
-          triggerElement: '#footer',
-          offset: -200
-      })
-      .on('enter', function(e) {
-
-          $('.hover-block.d').trigger("mouseover");
-
-          setTimeout(function() {
-              $('.hover-block.d').trigger("mouseout");
-          }, 700);
-
-
-          $('.hover-block.i-1').trigger("mouseover");
-          setTimeout(function() {
-              $('.hover-block.i-1').trigger("mouseout");
-          }, 700);
-
-          $('.hover-block.g').trigger("mouseover");
-          setTimeout(function() {
-              $('.hover-block.g').trigger("mouseout");
-          }, 700);
-
-
-          $('.hover-block.i-2').trigger("mouseover");
-          setTimeout(function() {
-              $('.hover-block.i-2').trigger("mouseout");
-          }, 700);
-
-          $('.hover-block.t').trigger("mouseover");
-          setTimeout(function() {
-              $('.hover-block.t').trigger("mouseout");
-          }, 700);
-
-          $('.hover-block.a').trigger("mouseover");
-          setTimeout(function() {
-              $('.hover-block.a').trigger("mouseout");
-          }, 700);
-
-          $('.hover-block.l').trigger("mouseover");
-          setTimeout(function() {
-              $('.hover-block.l').trigger("mouseout");
-          }, 700);
-
-      })
-      .addTo(scrollMagicController);
-
-
-
-
-
-
-      var optimizerScene1 = new ScrollScene({
-          triggerElement: '#our-process',
-          duration: 5000
-      })
-      .addTo(scrollMagicController)
-      .on('leave', function(e) {
-          $('body').removeClass('hide-those-stars');
-      })
-      .on('start', function(e) {
-          $('body').addClass('hide-those-stars');
-      });
-
-
-
-
-
-
-
-
-
-
-
-  });
-
-
-
-
-
-
-
-
-
-
-
-
-  /*========================================
-  =            CUSTOM FUNCTIONS            =
-  ========================================*/
-  function explodeLetter(parentID, letter, fillColor) {
-      console.log('#'+parentID+' .word-digital .letter.'+letter);
-      $('#'+parentID+' .word-digital .letter.'+letter).find('rect').each(function() {
-          $(this).css({
-              'fill': fillColor,
-              '-webkit-transform': 'translate3d('+randomIntFromInterval(-69, 69)+'px, '+randomIntFromInterval(-69, 69)+'px, 0)',
-              '-moz-transform': 'translate3d('+randomIntFromInterval(-69, 69)+'px, '+randomIntFromInterval(-69, 69)+'px, 0)',
-              '-ms-transform': 'translate3d('+randomIntFromInterval(-69, 69)+'px, '+randomIntFromInterval(-69, 69)+'px, 0)',
-              '-o-transform': 'translate3d('+randomIntFromInterval(-69, 69)+'px, '+randomIntFromInterval(-69, 69)+'px, 0)',
-              'transform': 'translate3d('+randomIntFromInterval(-69, 69)+'px, '+randomIntFromInterval(-69, 69)+'px, 0)'
-          });
-      });
-  }
-  function implodeLetter(parentID, letter) {
-      $('#'+parentID+' .word-digital .letter.'+letter).find('rect').css({
-          'fill': '#fff',
-          '-webkit-transform': 'translate3d(0, 0, 0)',
-          '-moz-transform': 'translate3d(0, 0, 0)',
-          '-ms-transform': 'translate3d(0, 0, 0)',
-          '-o-transform': 'translate3d(0, 0, 0)',
-          'transform': 'translate3d(0, 0, 0)'
-      });
-  }
-  function randomIntFromInterval(min,max) {
-      return Math.floor(Math.random()*(max-min+1)+min);
-  }
-  function introStuff() {
-      $('body').addClass('show-background');
-      setTimeout(function() {
-          $('body').addClass('show-stars');
-
-          $('.hover-block.d').trigger("mouseover");
-          setTimeout(function() {
-              $('.hover-block.d').trigger("mouseout");
-          }, 700);
-
-
-          $('.hover-block.i-1').trigger("mouseover");
-          setTimeout(function() {
-              $('.hover-block.i-1').trigger("mouseout");
-          }, 700);
-
-          $('.hover-block.g').trigger("mouseover");
-          setTimeout(function() {
-              $('.hover-block.g').trigger("mouseout");
-          }, 700);
-
-
-          $('.hover-block.i-2').trigger("mouseover");
-          setTimeout(function() {
-              $('.hover-block.i-2').trigger("mouseout");
-          }, 700);
-
-          $('.hover-block.t').trigger("mouseover");
-          setTimeout(function() {
-              $('.hover-block.t').trigger("mouseout");
-          }, 700);
-
-          $('.hover-block.a').trigger("mouseover");
-          setTimeout(function() {
-              $('.hover-block.a').trigger("mouseout");
-          }, 700);
-
-          $('.hover-block.l').trigger("mouseover");
-          setTimeout(function() {
-              $('.hover-block.l').trigger("mouseout");
-          }, 700);
-
-      }, 500);
-  }
-  function fillTopper() {
-      $('#topper').height($(window).height());
-  }
-  function isEmailValid(email) {
-      var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-      return re.test(email);
-  }
-  function sexyInputs() {
-
-      function SVGInput( el, options ) {
-          this.el = el;
-          this.inputEl = this.el.querySelector( '.input' );
-          this.init();
-      }
-
-      SVGInput.prototype.init = function() {
-          this.shapeEl = this.el.querySelector( 'span.morph-shape' );
-
-          var s = Snap( this.shapeEl.querySelector( 'svg' ) );
-          this.pathEl = s.select( 'path' );
-          this.paths = {
-              reset : this.pathEl.attr( 'd' ),
-              active : this.shapeEl.getAttribute( 'data-morph-active' )
-          };
-
-          this.initEvents();
-      };
-
-      SVGInput.prototype.initEvents = function() {
-          if( this.inputEl.type === 'checkbox' || this.inputEl.type === 'submit' ) {
-              this.el.addEventListener( 'mousedown', this.down.bind(this) );
-              this.el.addEventListener( 'touchstart', this.down.bind(this) );
-
-              this.el.addEventListener( 'mouseup', this.up.bind(this) );
-              this.el.addEventListener( 'touchend', this.up.bind(this) );
-
-              this.el.addEventListener( 'mouseout', this.up.bind(this) );
-          } else {
-              this.el.addEventListener( 'focus', this.toggle.bind(this), true );
-              this.el.addEventListener( 'click', this.toggle.bind(this) );
-          }
-      };
-
-      SVGInput.prototype.down = function() {
-          this.pathEl.stop().animate( { 'path' : this.paths.active }, 100, mina.easein );
-      };
-
-      SVGInput.prototype.up = function() {
-          this.pathEl.stop().animate( { 'path' : this.paths.reset }, 900, mina.elastic );
-      };
-
-      SVGInput.prototype.toggle = function() {
-          var self = this;
-
-          this.pathEl.stop().animate( { 'path' : this.paths.active }, 150, mina.easein, function() {
-              self.pathEl.stop().animate( { 'path' : self.paths.reset }, 550, mina.elastic );
-          } );
-      };
-
-      [].slice.call( document.querySelectorAll( '.input-wrap' ) ).forEach( function( el ) {
-          new SVGInput( el );
-      } );
-
-  }
-
-
-  // Open the console...
-  console.log('______________________$$$$$$$$');
-  console.log('_______________$$$$$$$________$$$$$$$$$');
-  console.log('_____________$$________________________$$$$');
-  console.log('____________$$_____________________________$$');
-  console.log('___________$__________________________________$$');
-  console.log('___________$$___________________________________$$');
-  console.log('__________$$__$$______________________$$__________$$');
-  console.log('________$$__$$___$$$$_________$$$$____$$__________$$$$');
-  console.log('______$$___$$__$$$$__$$_____$$$$__$$_$$_____________$$$');
-  console.log('______$$___$$____$$$$_________$$$$___$$_______________$$');
-  console.log('______$$___$$________________________$$_______________$$');
-  console.log('______$$____$$_______________________$$_____________$$');
-  console.log('________$$__$$____$$$$$$_____________$$___________$$$');
-  console.log('________$$__$$__$$______$$___________$$_________$$');
-  console.log('________$$__$$__$$______$$___________$$_______$$');
-  console.log('__________$$$$____$$$$$$_____________$$$$____$$$$');
-  console.log('__________$$$$_____________________$$__$$____$$$');
-  console.log('___________$$_$$$$$$$$$$$$_____$$$$______$$$$_$$');
-  console.log('_____________$$___$$______$$$$$_______________$$');
-  console.log('_____________$$_____$$$$$$$____________________$$');
-  console.log('_____________$$________________________________$$');
-  console.log('____________$$_________________________________$$');
-  console.log('____________$$_________________________________$$');
-  console.log('____________$$___________________________________$');
-  console.log('____________$$___________________________________$$');
-  console.log('__________$$_________________________$$___________$');
-  console.log('__________$$__________$$___________$$_____________$$');
-  console.log('________$$__$$________$$_________$$_______________$$');
-  console.log('______$$____$$__________$$_______$$_______________$$');
-  console.log('______$$____$$____________$$___$$_________________$$');
-  console.log('____$$______$$_____________$$_$$_______$$_________$$');
-  console.log('____$$______$$________$$____$$$________$$_________$$');
-  console.log('____$$______$$________$$____$$$_______$$__________$$');
-  console.log('____$$______$$________$$_______________$$__________$$');
-  console.log('____$$______$$________$$_______________$$____________$');
-  console.log('_$$$$_______$$________$$_______________$$____________$$');
-  console.log('$___$$______$$________$$$$___________$$$$____________$$');
-  console.log('$___$$______$$________$$__$$_______$$__$$____________$$');
-  console.log('_$$$$$______$$________$$____$$___$$_____$$___________$$');
-  console.log('____$$______$$________$$______$$_______$$___________$$');
-  console.log('____$$______$$________$$_____$$________$$___________$$');
-  console.log('__$$________$$________$$$$$$$$___$$$$$$__$$_________$$');
-  console.log('__$$________$$________$$______$$$______$$$$_________$$');
-  console.log('$$________$$__________$$_________$$$$$$__$$__________$');
-  console.log('$$______$$__________$$$$$$$$$$$$$$$______$$__________$');
-  console.log('$$_$$_$$$__________$$_____________$$$$$$$__$$_________$');
-  console.log('_$$$$$$$___________$$______________________$$________$$');
-  console.log('_____$$__$$__$$__$$_$______________________$$__________$$');
-  console.log('______$$$$__$___$__$$______________________$$____________$');
-  console.log('_______$$___$___$__$________________________$$_$__$$__$$__$');
-  console.log('_________$$$$$$$$$$__________________________$$_$_$$$$$$$$');
-  console.log('You found Baxter!!!');
-</script>
 </html>
